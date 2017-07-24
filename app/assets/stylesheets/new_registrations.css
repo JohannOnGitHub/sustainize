@@ -1,0 +1,132 @@
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.image {
+  background: url('https://static.pexels.com/photos/34072/pexels-photo.jpg') center center no-repeat;
+  background-size: cover;
+  text-align: center;
+  background-position: left;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+}
+
+.text {
+    z-index: 9999;
+    position: relative;
+    font-family: 'Raleway', sans-serif;
+    top: -80px;
+    margin-bottom: -223px; 
+}
+.text h2 {
+  font-size: 50px;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+  color: #2F467F;
+  filter: brightness(1.2);
+}
+
+.login-heroin {
+    background: url("https://static.pexels.com/photos/34072/pexels-photo.jpg") no-repeat 50%;
+    background-size: cover;
+    width: 42%;
+    position: absolute;
+    height: 686px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.form-horizontal {
+    width: 90%;
+    margin-left: 5%;
+    font-family: 'Raleway', sans-serif;
+    color: #2F467F;
+}
+.gender {
+    text-align: right;
+}
+.country {
+    text-align: right;
+}
+.pwd-conf {
+    text-align: right;
+}
+
+/*.flagstrap .btn-default  {
+    width: 100%;
+    color: #999999;
+    text-align: left;
+    font-weight: 200;
+}
+.flagstrap .btn-default:hover  {
+    width: 100%;
+    color: #999999;
+    text-align: left;
+    background-color: #fff;
+}*/
+
+.form-horizontal .btn-basic {
+	border: 2px solid #2F467F;
+    border-radius: 10px;
+    padding: 5px 0px 5px 0px;
+    width: 100%;
+    background: #fff;
+    color: #2F467F;
+    text-decoration: none;
+}
+.form-horizontal .btn-basic:hover{
+	border: 2px solid #2F467F;
+    border-radius: 10px;
+    width: 100%;
+    background: #2F467F;
+    color: #FFF;
+    text-decoration: none;
+}
+@media only screen and (min-width: 768px) {
+    .form-horizontal {
+    width: 80%;
+    margin-left: 0%;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .gender {
+    text-align: left;
+    }
+    .date {
+    text-align: left;
+    }
+    .country {
+    text-align: left;
+    }
+    .pwd-conf{
+    text-align: left;
+    }
+}
+
+@media only screen and (min-width: 1050px) {
+    .image {
+    display: none;
+    }
+    .text h2 {
+    text-align: left;
+    margin-top: 70px;
+    margin-left: 25%;
+    font-size: 25px;
+    }
+}
+@media only screen and (max-width: 1049px) {
+    .login-heroin {
+    display: none;
+    }
+}

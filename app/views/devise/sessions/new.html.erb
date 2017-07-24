@@ -1,0 +1,60 @@
+<head>
+    <title>Sustainize</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="new_sessions.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Megrim:300,400,700' rel='stylesheet' type='text/css'>
+    <link href="http://blazeworx.com/flags.css" rel="stylesheet">
+</head>
+    <br />
+  <div class="image"></div>
+  <div class="container">
+  <div class="text">
+      <h2>Log in</h2>
+  </div>
+  </div>
+
+    <div class="login-hero"></div>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-horizontal'}) do |f| %>
+  <%= devise_error_messages! %>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  
+<form class="form-horizontal">
+      <div class="form-group">
+    <%= f.label :email, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+    <%= f.email_field :email, class: "form-control", autofocus: true, placeholder: "don't forget the @" %>
+    </div></div>
+
+<div class="form-group">
+    <%= f.label :password, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+    <%= f.password_field :password, class: "form-control", autocomplete: "off", placeholder: "with at least 6 characters" %>
+    </div></div>
+
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-6">
+  <% if devise_mapping.rememberable? -%>
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+      </div></div>
+  <% end -%>
+
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-6">
+    <%= f.submit "Log in", class: "btn-basic" %>
+    </div></div>
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+    <%= render "devise/shared/links" %>
+    </div></div>
+        
+</form>
+
+
+
+<% end %><% end %>

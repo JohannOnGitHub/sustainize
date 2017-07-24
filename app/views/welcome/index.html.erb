@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sustainize</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Megrim:300,400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    
+<div class="slider">
+      <div class="slide active-slide">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <h1>Connect for a good reason</h1>
+              <p>Sustainize offers new ways to connect, learn and share about social responsibility. It is the first platform to bring together everyone with an interest in sustainability. From social entrepreneurs to companies, investors, researchers and job-seekers!</p>
+              <a class="btn" <%= link_to "Sign up now", new_user_registration_path, :class => 'navbar-link', data: { turbolinks: 'false'} %></a>
+            </div>
+          </div>
+        </div>      
+      </div>         
+      <div class="slide slide-feature1">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <h1>Make an impact</h1>
+              <p>Do you want to find meaning in your work? Do you have skills that can shape businesses? Sustainize enables you to find opportunities with a meaning. All you need to do is sign up and explore.</p>
+              <a class="btn" href="#" role="button">Find an opportunity</a>
+              <a class="btn" href="#" role="button">Post an opportunity</a>
+            </div>
+          </div>
+        </div>      
+      </div> 
+      <div class="slide slide-feature2">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <h1>Spot the next good thing</h1>
+              <p>Social entrepreneurship is developing to be one main field of investment. Complete your portfolio now and don’t miss out on the next industry disruptor!</p>
+              <a class="btn" href="#" role="button">Invest now</a>
+            </div>
+          </div>
+        </div>      
+      </div> 
+    </div>
+<div class="slider-nav">
+      <a class="arrow-prev"><img src="http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/flipboard/arrow-prev.png"></a>
+      <ul class="slider-dots">
+        <li class="dot active-dot">&bull;</li>
+        <li class="dot">&bull;</li>
+        <li class="dot">&bull;</li>
+      </ul>
+      <a class="arrow-next"><img src="http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/flipboard/arrow-next.png"></a>
+</div> 
+    
+
+  <div class="background-image"></div>
+  <div class="container">
+  <div class="row text-center">
+  <div class="text-jumbotron">
+      <h2>The Magazine</h2>
+  </div>
+  </div>
+  </div>
+
+<br>
+<div class="container">
+    <div class="articles">
+    <div class="article1">
+    <h3><a href="http://localhost:3000/pages/what_is_social_entrepreneurship">What Is Social Entrepreneurship?</a></h3>
+    </div>
+    <div class="article2">    
+    <h3><a href=" ">How Retailers Can Reduce The Carbon Footprint From Online Shopping</a></h3>
+    </div>
+</div></div>
+<div class="section-end">
+<a class="btn" href="http://localhost:3000/pages/magazine" role="button">More articles here!</a>
+</div>
+    
+</body>
+</html>

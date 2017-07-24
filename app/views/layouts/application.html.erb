@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sustainize</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Megrim:300,400,700' rel='stylesheet' type='text/css'>
+      
+    <link rel="stylesheet" type="text/css" href="globals.css">
+  </head>
+
+  <body>
+ <header class="container-fluid">
+  <div class="row">
+      <h1 class="col-sm-4"><%= link_to 'Sustainize', "http://localhost:3000", data: { turbolinks: 'false'} %></h1>
+  <nav class="col-sm-8 text-right">
+  <ul>
+      <li><a href="http://localhost:3000/pages/opportunities">Opportunities</a></li>
+      <li><a href="http://localhost:3000/pages/invest">Invest</a></li>
+      <li><a href="http://localhost:3000/pages/magazine">Magazine</a></li>
+      <li><%= link_to 'About', "http://localhost:3000/pages/about", data: { turbolinks: 'false'} %></li> 
+          <li><% if user_signed_in? %>
+  <div class="dropdown">
+  <a class="dropbtn"><img src="https://cdn.pixabay.com/photo/2016/03/31/20/37/client-1295901_960_720.png"></a>
+  <div class="dropdown-content">
+      <%= link_to 'Edit profile', edit_user_registration_path %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete  %>
+  </div>
+  </div>
+      <% else %>
+      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link', data: { turbolinks: 'false'} %> |
+      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+      <% end %></li>
+  </ul>
+  <select> 
+  </select> 
+  </nav>
+  </div>
+</header>     
+      
+<% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+    <%= yield %>
+      
+<footer class="container">
+  <div class="row">
+  <p class="col-sm-4">&copy; 2017 Sustainize</p>
+  <ul class="col-sm-8">
+  <li class="col-sm-1">
+      <a href="https://www.instagram.com/sustainize/" target="_blank"><img src="https://cdn2.iconfinder.com/data/icons/social-media-network-fill-flat-icon/512/Instagram-2-128.png"></a></li>
+  <li class="col-sm-1">
+      <a href=" "><img src="https://cdn2.iconfinder.com/data/icons/social-media-network-fill-flat-icon/512/LinkedIn-2-128.png"></a></li>
+  </ul>
+  </div>
+</footer>
+      <script src="jquery.js"></script>
+      <script>
+          // Create default option "Go to..."
+          $("<option />", {
+          "selected": "selected",
+          "value"   : "",
+          "text"    : "Menu"
+          }).appendTo("nav select");
+          // Populate dropdown with menu items
+          $("nav a").each(function() {
+          var el = $(this);
+          $("<option />", {
+          "value"   : el.attr("href"),
+          "text"    : el.text()
+          }).appendTo("nav select");
+          });
+          $("nav select").change(function() {
+          window.location = $(this).find("option:selected").val();
+          });
+      </script>
+      
+  </body>
+</html>

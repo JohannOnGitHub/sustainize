@@ -1,0 +1,128 @@
+<head>
+    <title>Sustainize</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="new_registrations.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Megrim:300,400,700' rel='stylesheet' type='text/css'>
+    <link href="http://blazeworx.com/flags.css" rel="stylesheet">
+</head>
+
+<body>
+    <br />
+  <div class="image"></div>
+  <div class="container">
+  <div class="text">
+      <h2>Sign up</h2>
+  </div>
+  </div>
+    
+    <div class="login-heroin"></div>
+    
+<%= bootstrap_nested_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form-horizontal'}) do |f| %>
+    
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form-horizontal'}) do |f| %>
+  <%= devise_error_messages! %>
+    <br /><br /> 
+    
+<form class="form-horizontal">
+<div class="form-group">
+    <%= f.label :first_name, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+    <%= f.text_field :first_name, class: "form-control", autofocus: true, placeholder: "your first name" %>
+      </div></div>
+
+<div class="form-group">
+    <%= f.label :last_name, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+    <%= f.text_field :last_name, class: "form-control", autofocus: true, placeholder: "your last name" %>
+      </div></div>
+    
+<div class="form-group">
+    <%= f.label :profession, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+    <%= f.text_field :profession, class: "form-control", autofocus: true, placeholder: "your area of expertise" %>
+      </div></div>
+    
+<div class="form-group">
+    <%= f.label :date_of_birth, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+    <%= f.text_field :date_of_birth, "data-provide" => 'datepicker', :class => "datepicker form-control", placeholder: "yyyy-mm-dd" %>
+    </div></div>
+    
+<div class="form-group">
+    <div class="gender">
+    <%= f.label :is_female, "Gender", class: 'col-sm-2'%></div>
+    <div class="col-sm-6">
+        <%= f.radio_button :is_female, true %> <%= f.label :is_female, "Female" %>
+        <%= f.radio_button :is_female, false %> <%= f.label :is_female, "Male" %>
+    </div>
+</div>
+    
+<div class="form-group">
+    <div class="country">
+    <%= f.label :location, class: "col-sm-2 control-label" %>
+    </div>
+    <div class="col-sm-6">
+    <%= f.country_select :location, {priority_countries: ["SE","NO","DK","FI","FR","CH","DE","NL","BE","GB","US","CN","SG","JP","IN"]}, class: "form-control" %>
+    <!-- <div class="location" data-selected-country="SE", data: { turbolinks: 'false'} ></div> -->
+    </div></div> 
+    
+<div class="form-group">
+    <%= f.label :email, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+    <%= f.email_field :email, class: "form-control", autofocus: true, placeholder: "your email address, don't forget @" %>
+      </div></div>
+
+<div class="form-group">
+    <%= f.label :password, class: "col-sm-2 control-label" %>
+    <% if @minimum_password_length %>
+    <% end %>
+    <div class="col-sm-6">
+    <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "create a password with at least 6 characters"%>
+      </div></div>
+
+<div class="form-group">
+    <div class="pwd-conf">
+    <%= f.label :password_confirmation, class: "col-sm-2" %></div>
+    <div class="col-sm-6">
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "please enter your password once more" %>
+      </div></div>
+    
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-6">
+    <%= f.submit "Sign up", class: "btn-basic" %>
+    </div></div>
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+        <%= render "devise/shared/links" %></div></div>
+    
+</form>
+    <%= javascript_include_tag :defaults, "nested_form" %>
+    
+    <!--<script src="http://blazeworx.com/jquery.flagstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+        $('.location').flagStrap({
+        buttonType: "btn-default",
+        placeholder: {
+        value: "",
+        text: "your country of residence",
+    }
+        });
+        });
+    </script>-->
+    
+    <script>
+    $('.datepicker').datepicker({
+    keyboardNavigation: true,
+    altField: '#date_of_birth',
+    startView: 2,
+    format: 'yyyy-mm-dd'
+    });
+    </script>
+    
+</body>
+    <% end %><% end %>
+

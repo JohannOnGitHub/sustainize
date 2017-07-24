@@ -1,0 +1,34 @@
+.what-is-social-entrepreneurship {
+  background: url('https://static.pexels.com/photos/485279/pexels-photo-485279.png') center center no-repeat;
+  background-size: cover;
+  text-align: center;
+  background-position: left;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+}
+
+.text-jumbotron{
+    z-index: 9999;
+    position: relative;
+    top: -130px;
+    margin-bottom: -223px; 
+}
+.text-jumbotron h2 {
+  font-size: 50px;
+  font-weight: 400;
+  margin: 0;
+  color: #fff;
+  filter: brightness(1.2);
+}
+
+.article p {
+   padding: 0% 20% 0% 20%;
+   text-align: left;
+}
+
+.btn-info {
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+}

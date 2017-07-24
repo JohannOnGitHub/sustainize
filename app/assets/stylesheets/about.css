@@ -1,0 +1,80 @@
+.parallax-window {
+    min-height: 500px;
+    background: transparent;
+    display: flex;
+}
+
+.parallax-window h1, p {
+    text-align: center;
+}
+
+
+.content1 {
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+    width: 300px;
+    color: #2F467F;
+    margin-top: 50px;
+    margin-right: 100px;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: auto;
+    text-align: right;
+    margin-left: auto;
+    justify-content: flex-end;
+    border-radius: 10px;
+    background: #fff;
+    
+}
+.content2 {
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+    width: 300px;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: auto;
+    border-radius: 10px;
+    background: #fff;
+    color: #2F467F;
+    float: left;
+    margin-top: 30px;
+    margin-left: 100px;
+}
+.content3 {
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+    width: 300px;
+    color: #2F467F;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: auto;
+    border-radius: 10px;
+    background: #fff;
+    margin-top: 70px;
+    margin-right: 100px;
+    text-align: right;
+    margin-left: auto;
+    justify-content: flex-end;
+}
+
+@media only screen and (max-width: 480px) {
+    .content1 h1 {
+    font-size: 30px;
+}
+    .content2 h1 {
+    font-size: 30px;
+}
+    .content3 h1 {
+    font-size: 30px;
+}
+    .content1 {
+    margin-right: 30px;
+    margin-top: 50px;
+}
+    .content2 {
+    margin-left: 30px;
+    margin-top: 30px;
+}
+    .content3 {
+    margin-right: 30px;
+    margin-top: 70px;
+}
+
+}

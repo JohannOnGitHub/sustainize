@@ -1,0 +1,106 @@
+<head>
+    <title>Sustainize</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="edit_registrations.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Megrim:300,400,700' rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script> 
+</head>
+
+<body>
+    
+    <div class="login-heroin2"></div>
+    
+<div class="edit-profile">
+<h2>Edit Profile</h2></div>
+    
+<%= bootstrap_nested_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form-horizontal'}) do |f| %>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+    
+<form class="form-horizontal">
+<div class="form-group">
+    <%= f.label :first_name, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+    <%= f.text_field :first_name, class: "form-control", autofocus: true, placeholder: "your first name" %>
+      </div></div>
+
+<div class="form-group">
+    <%= f.label :last_name, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+    <%= f.text_field :last_name, class: "form-control", autofocus: true, placeholder: "your last name" %>
+      </div></div>
+    
+<div class="form-group">
+    <%= f.label :profession, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+    <%= f.text_field :profession, class: "form-control", autofocus: true, placeholder: "your area of expertise" %>
+      </div></div>
+    
+<div class="form-group">
+    <div class="gender">
+    <%= f.label :is_female, "Gender", class: 'col-sm-2'%></div>
+    <div class="col-sm-6">
+        <%= f.radio_button :is_female, true %> <%= f.label :is_female, "Female" %>
+        <%= f.radio_button :is_female, false %> <%= f.label :is_female, "Male" %>
+    </div>
+</div>
+    
+<div class="form-group">
+    <div class="country">
+    <%= f.label :location, class: "col-sm-2 control-label" %>
+    </div>
+    <div class="col-sm-6">
+    <%= f.country_select :location, {priority_countries: ["SE","NO","DK","FI","FR","CH","DE","NL","BE","GB","US","CN","SG","JP","IN"]}, class: "form-control" %>
+    <!-- <div class="location" data-selected-country="SE", data: { turbolinks: 'false'} ></div> -->
+    </div></div> 
+
+  <div class="form-group">
+    <%= f.label :email, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+    <%= f.email_field :email, class: "form-control", autofocus: true %>
+      </div></div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :password, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+    <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+      </div></div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation, class: "col-sm-2 control-label" %>
+    <div class="col-sm-6">
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+      </div></div>
+
+  <div class="form-group">
+    <div class="important-pwd">
+    <%= f.label :current_password, class: "col-sm-2 control-label" %>
+    </div>
+    <div class="col-sm-6">
+    <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+      </div></div>
+
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-6">
+    <%= f.submit "Update", class: "btn-basic" %>
+    </div></div>
+        
+    </form>
+
+    <div class="form-horizontal">
+    <div class="form-group">
+  <div class="col-sm-offset-2 col-sm-6">
+      <%= button_to "Not Satisfied? Cancel your account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => "form-control" %>
+    </div></div>
+    </div>
+    
+</body>
+    <% end %><% end %>
